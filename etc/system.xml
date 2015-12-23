@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+
+<config>
+    <sections>
+        <payment>
+            <groups>
+                <payatall translate="label" module="payatall">
+                    <label>PayAtAll</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                                <label>Enabled</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                                <sort_order>1</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                        </active>
+
+                        <title translate="label">
+                                <label>Title</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>2</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                        </title>
+
+
+                        <order_status translate="label">
+                                <label>New Order Status</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_order_status</source_model>
+                                <sort_order>3</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </order_status>
+
+                        <test_mode>
+                                <label>Test Mode</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                                <sort_order>4</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </test_mode>
+
+                        <test_post_url>
+                                <label>Payatall Test POST URL</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>5</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                <depends>
+                                        <test_mode>1</test_mode>
+                                </depends>
+                        </test_post_url>
+
+                        <test_service_inquiry>
+                                <label>Payatall Test Service Inquiry</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>5</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                <depends>
+                                        <test_mode>1</test_mode>
+                                </depends>
+                        </test_service_inquiry>
+
+                        <post_url>
+                                <label>Payatall POST URL</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>6</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </post_url>
+
+                        <service_inquiry>
+                                <label>Payatall Service Inquiry</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>7</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </service_inquiry>
+
+                        <payatall_username>
+                                <label>Merchant Username</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>8</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </payatall_username>
+
+                        <payatall_password>
+                                <label>Merchant Password</label>
+                                <frontend_type>password</frontend_type>
+                                <sort_order>9</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </payatall_password>
+
+                        <service_id>
+                                <label>Service ID</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>10</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </service_id>
+
+                        <payatall_mid>
+                                <label>Payatall MID</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>11</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </payatall_mid>
+
+                        <payatall_lang>
+                                <label>Language</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>12</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </payatall_lang>
+
+                        <currency_type>
+                                <label>Currency Type</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>13</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </currency_type>
+
+                        <response_url_back>
+                                <label>Response URL Back</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>14</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </response_url_back>
+
+                        <response_url_confirm>
+                                <label>Response URL Confirm</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>15</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </response_url_confirm>
+
+                        <response_url_cancel>
+                                <label>Response URL Cancel</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>16</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </response_url_cancel>
+
+                        <description>
+                                <label>Description</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>17</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </description>
+
+                        <message_slip1>
+                                <label>Message Slip - 1</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>18</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </message_slip1>
+
+                        <message_slip2>
+                                <label>Message Slip - 2</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>19</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </message_slip2>
+
+                        <expiry_days>
+                                <label>Slip Expiry Days</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>20</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                <comment>Set 2 days by default. It should be less than 30 days.</comment>
+                        </expiry_days>
+
+                        <allowspecific translate="label">
+                                <label>Payment Applicable From</label>
+                                <frontend_type>select</frontend_type>
+                                <sort_order>21</sort_order>
+                                <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </allowspecific>
+
+                        <specificcountry translate="label">
+                                <label>Countries Payment Applicable From</label>
+                                <frontend_type>multiselect</frontend_type>
+                                <sort_order>22</sort_order>
+                                <source_model>adminhtml/system_config_source_country</source_model>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                <depends>
+                                        <allowspecific>1</allowspecific>
+                                </depends>
+                        </specificcountry>
+
+                        <sort_order translate="label">
+                                <label>Sort Order</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>23</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                        </sort_order>
+                    </fields>
+                </payatall>
+            </groups>
+        </payment>
+    </sections>
+</config>

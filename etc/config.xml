@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Paymentgateway_Payatall>
+            <version>0.1.0</version>
+        </Paymentgateway_Payatall>
+    </modules>
+
+    <global>
+        <helpers>
+            <payatall>
+                <class>Paymentgateway_Payatall_Helper</class>
+            </payatall>
+        </helpers>
+
+        <models>
+            <payatall>
+                <class>Paymentgateway_Payatall_Model</class>
+                <resourceModel>payatall_mysql4</resourceModel>
+            </payatall>
+
+            <payatall_mysql4>
+                <class>Paymentgateway_Payatall_Model_Mysql4</class>
+                <entities>
+                    <payatall>
+                        <table>paymentgateway_payatall</table>
+                    </payatall>
+                </entities>
+            </payatall_mysql4>
+        </models>
+
+        <blocks>
+            <payatall>
+                <class>Paymentgateway_Payatall_Block</class>
+            </payatall>
+        </blocks>
+
+        <resources>
+            <payatall_setup>
+                <setup>
+                    <module>Paymentgateway_Payatall</module>
+                </setup>
+
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </payatall_setup>
+
+            <payatall_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </payatall_write>
+
+            <payatall_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </payatall_read>
+        </resources>
+    </global>
+
+    <default>
+        <payment>
+            <payatall>
+                <active>1</active>
+                <model>payatall/payment</model>
+                <title>PayAtAll</title>
+                <order_status>pending</order_status>
+                <test_mode>1</test_mode>
+                <test_post_url>http://gateway2.payatall.com/paynow</test_post_url>
+                <test_service_inquiry>http://gateway2.payatall.com/serviceinquiry</test_service_inquiry>
+                <post_url>https://gateway.payatall.com/paynow</post_url>
+                <service_inquiry>https://gateway.payatall.com/serviceinquiry</service_inquiry>
+                <payatall_username>user_xxxxx</payatall_username>
+                <payatall_password>xxxxx</payatall_password>
+                <service_id>01</service_id>
+                <payatall_mid>395</payatall_mid>
+                <payatall_lang>TH</payatall_lang>
+                <currency_type>THB</currency_type>
+                <response_url_back></response_url_back>
+                <response_url_confirm>payatall/payment/response</response_url_confirm>
+                <response_url_cancel>payatall/payment/cancel</response_url_cancel>
+                <description>Items of </description>
+                <message_slip1>Payment gateway</message_slip1>
+                <message_slip2>PayAtAll Payment</message_slip2>
+                <expiry_days>2</expiry_days>
+                <payment_action>sale</payment_action>
+                <sort_order>0</sort_order>
+            </payatall>
+        </payment>
+    </default>
+
+    <frontend>
+        <routers>
+            <payatall>
+                <use>standard</use>
+                <args>
+                    <module>Paymentgateway_Payatall</module>
+                    <frontName>payatall</frontName>
+                </args>
+            </payatall>
+        </routers>
+    </frontend>
+
+    <admin>
+        <routers>
+            <payatall>
+                <use>admin</use>
+                <args>
+                    <module>Paymentgateway_Payatall</module>
+                    <frontName>payatall</frontName>
+                </args>
+            </payatall>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <menu>
+            <glasseslogs>
+                <children>
+                    <payatallshowlogs module="payatall">
+                        <title>Pay@all Logs</title>
+                        <action>payatall/showlog</action>
+                    </payatallshowlogs>
+                </children>
+            </glasseslogs>
+        </menu>
+
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <glasseslogs>
+                            <children>
+                                <payatalllogsmenu translate="title" module="payatall">
+                                    <title>PayAtAll</title>
+                                    <sort_order>85</sort_order>
+                                    <children>
+                                        <payatallshowlogs>
+                                            <title>Logs</title>
+                                        </payatallshowlogs>
+                                    </children>
+                                </payatalllogsmenu>
+                            </children>
+                        </glasseslogs>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <crontab>
+        <jobs>
+            <paymentgateway_payatall>
+                <schedule>
+                    <cron_expr>0 0,4,8,12,16,20 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>payatall/serviceinquiry::run</model>
+                </run>
+            </paymentgateway_payatall>
+        </jobs>
+    </crontab>
+</config> 
